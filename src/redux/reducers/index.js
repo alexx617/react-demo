@@ -1,5 +1,5 @@
 import { combineReducers } from 'redux'
-import getDogReducer from './redux/reducers/getDogReducer'
+import getDogReducer from './getDogReducer'
 
 const rootReducer = combineReducers({
     getDogReducer,

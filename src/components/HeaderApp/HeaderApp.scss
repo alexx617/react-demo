@@ -1,0 +1,24 @@
+.header{
+    width: 100%;
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    img{
+        height: 100%;
+        background-size: 100%;
+        width: 114px;
+    }
+    .menulist{
+        display: flex;
+        li{
+            flex: 1;
+            margin-right: 30px;
+            line-height: 80px;
+            p{
+                &:hover{
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}
