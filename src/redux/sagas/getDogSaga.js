@@ -1,5 +1,6 @@
 import {
-    CUTEIMG
+    CUTEIMG,
+    CUTEIMG_SUCCESS
 } from "../actions/actions_type";
 import { takeLatest, call, put } from "redux-saga/effects";
 import axios from "axios";
@@ -8,7 +9,7 @@ import axios from "axios";
 function fetchPhoto() {
     return axios({
         method: "get",
-        url: `https://jsonplaceholder.typicode.com/photos/`
+        url: `https://dog.ceo/api/breeds/image/random`
     });
 }
 
@@ -16,11 +17,12 @@ export default function* watchSaga() {
     yield takeLatest(CUTEIMG, workerSaga)
 }
 
-function* workerSaga() {
+function* workerSaga(action) {
     try{
+        // console.log(action);
         const res = yield call(fetchPhoto)
-        const photo = res.data;
-        yield put({type:CUTEIMG,url:photo})
+        const photo = res.data.message;
+        yield put({type:CUTEIMG_SUCCESS,url:photo})
     }catch(err){
         console.log(err);
     }
