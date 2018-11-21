@@ -6,18 +6,14 @@ const initState = {
 export default function cuteReducers(state = initState, actions) {
     switch (actions.type) {
         case CUTEIMG:
-            return Object.assign({}, state, {
-                url: actions.url
-            })
+            return state
         case CUTETEXT:
             return Object.assign({}, state, {
                 text: state.text+actions.text+'加'
             })
         case CUTEIMG_SUCCESS:
-            console.log('CUTEIMG_SUCCESS');
-            
             return Object.assign({}, state, {
-                text: state.text+actions.text+'加'
+                url: actions.url
             })
         default:
             return state

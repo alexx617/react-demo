@@ -10,20 +10,19 @@ class App extends Component {
       textList: 'list'
    }
    componentWillMount() {
-      
+
    }
    render() {
       const { cuteUrl, text, getCute } = this.props;
       return (
          <div>
-            <Cute cuteurl={cuteUrl}></Cute>
-            <p onClick={() => getCute(this.state.textList)}>取值</p>
+            <Cute cuteurl={cuteUrl} changeImgBT={() => getCute()}></Cute>
+            {/* <p onClick={() => getCute(this.state.textList)}>取值</p> */}
             {/* <p onClick={() => getText(this.state.textList)}>{text}</p> */}
          </div>
       )
    }
 }
-
 
 const mapStateToProps = state => {
    return {
@@ -31,8 +30,9 @@ const mapStateToProps = state => {
       text: state.getDogReducer.text
    }
 }
+
 const mapDispatchToProps = dispatch => ({
-   getCute: id => dispatch(getCute(id))
+   getCute: () => dispatch(getCute())
 })
 // const mapDispatchToProps = dispatch => {
 //    return {
