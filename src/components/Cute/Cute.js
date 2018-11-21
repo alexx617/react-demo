@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-const Cute = ({ cuteurl, changeImg}) => {
+const Cute = ({ cuteurl, changeImgBT}) => {
     let showImg = false
     if(typeof cuteurl==='string'){
         showImg = true
@@ -10,7 +10,7 @@ const Cute = ({ cuteurl, changeImg}) => {
             {
                 showImg ? <img src={cuteurl} /> : <p>{cuteurl}</p>
             }
-            <button onClick={changeImg}>change</button>
+            <button>change</button>
         </div>
     )
 }

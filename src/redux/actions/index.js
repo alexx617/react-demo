@@ -1,4 +1,4 @@
-import {CUTEIMG} from './actions_type'
+import { CUTEIMG, CUTETEXT } from './actions_type'
 
 export function getCute(url) {
     return {
@@ -6,3 +6,17 @@ export function getCute(url) {
         url
     }
 }
+
+export const getText = (text) => {
+    return {
+        type: CUTETEXT,
+        text
+    }
+}
+
+// export function getText(text) {
+//     return {
+//         type: CUTETEXT,
+//         text
+//     }
+// }
