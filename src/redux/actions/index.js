@@ -13,10 +13,3 @@ export const getText = (text) => {
         text
     }
 }
-
-// export function getText(text) {
-//     return {
-//         type: CUTETEXT,
-//         text
-//     }
-// }

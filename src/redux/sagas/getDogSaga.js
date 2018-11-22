@@ -19,7 +19,6 @@ export default function* watchSaga() {
 
 function* workerSaga(action) {
     try{
-        // console.log(action);
         const res = yield call(fetchPhoto)
         const photo = res.data.message;
         yield put({type:CUTEIMG_SUCCESS,url:photo})
