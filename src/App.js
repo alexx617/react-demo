@@ -22,7 +22,7 @@ class App extends Component {
       this.setState({ query: ev.target.value })
    }
    render() {
-      const { cuteUrl, text, getCute } = this.props;
+      const { cuteUrl, getCute } = this.props;
       // 数据
       let blogs = [
          {
